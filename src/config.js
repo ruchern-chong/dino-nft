@@ -5,8 +5,8 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
+const namePrefix = "Extinct Dino";
+const description = "A NFT collection for the extinct dinosaurs in digital art";
 const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
@@ -24,15 +24,24 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 25,
     layersOrder: [
       { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Hat" },
+      {
+        name: "Head",
+        options: {
+          bypassDNA: true,
+        },
+      },
+      {
+        name: "Body",
+        options: {
+          bypassDNA: true,
+        },
+      },
+      { name: "Face" },
+      { name: "Atmosphere" },
     ],
   },
 ];
@@ -42,8 +51,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 1500,
+  height: 1500,
   smoothing: false,
 };
 
@@ -78,7 +87,9 @@ const background = {
   default: "#000000",
 };
 
-const extraMetadata = {};
+const extraMetadata = {
+  creator: "CryptoDinos",
+};
 
 const rarityDelimiter = "#";
 
@@ -86,7 +97,7 @@ const uniqueDnaTorrance = 10000;
 
 const preview = {
   thumbPerRow: 5,
-  thumbWidth: 50,
+  thumbWidth: 150,
   imageRatio: format.height / format.width,
   imageName: "preview.png",
 };

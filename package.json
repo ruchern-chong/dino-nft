@@ -19,13 +19,23 @@
     "pixelate": "node utils/pixelate.js",
     "update_info": "node utils/update_info.js",
     "preview_gif": "node utils/preview_gif.js",
-    "generate_metadata": "node utils/generate_metadata.js"
+    "generate_metadata": "node utils/generate_metadata.js",
+    "uploadFiles": "node utils/uploadFiles.js",
+    "uploadMetadata": "node utils/uploadMetadata.js",
+    "mint": "node utils/mint.js",
+    "mint:nft": "yarn uploadFiles && yarn uploadMetadata && yarn mint"
   },
   "author": "Daniel Eugene Botha (HashLips)",
   "license": "MIT",
   "dependencies": {
     "canvas": "^2.8.0",
+    "dotenv": "^10.0.0",
+    "form-data": "^4.0.0",
     "gif-encoder-2": "^1.0.5",
+    "node-fetch": "^2.6.6",
     "sha1": "^1.1.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1"
   }
 }
